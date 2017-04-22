@@ -12,6 +12,7 @@ import FlatButton from 'material-ui/FlatButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import LeftMenu from './Drawer';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
+import {lightBlue300} from 'material-ui/styles/colors';
 
 class Login extends Component {
   componentWillMount() {
@@ -69,6 +70,7 @@ class Nav extends Component {
       
     <div>
         <AppBar
+          style={{backgroundColor: lightBlue300}}
           title="Dev Huntr"
           iconElementLeft={<IconButton><LeftMenu /></IconButton>}
           iconElementRight={this.props.profile ? <Logged /> : <Login />}
@@ -76,7 +78,6 @@ class Nav extends Component {
 
         <div className="Site">
           <div className="Site-header">
-            <img src={logo} className="Site-logo" alt="logo" />
             {this.renderUserControls()}
           </div>
           <div className="Site-page">
