@@ -15,14 +15,6 @@ import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import {lightBlue300} from 'material-ui/styles/colors';
 
 class Login extends Component {
-  componentWillMount() {
-    this.login = login();
-  }
-
-  componentWillUnmount() {
-    this.login.hide();
-    this.login = null;
-  }
 
   static muiName = 'FlatButton';
 
