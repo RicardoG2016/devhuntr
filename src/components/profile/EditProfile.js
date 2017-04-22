@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {connectProfile} from '../auth0/auth';
+import {connectProfile} from '../../auth0/auth';
 import './EditProfile.css';
 
 class EditProfile extends Component {

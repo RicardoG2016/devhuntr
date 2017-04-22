@@ -5,14 +5,12 @@ import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import AppBar from 'material-ui/AppBar';
 
 export default class LeftMenu extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {open: false};
   }
 
   handleToggle = () => this.setState({open: !this.state.open});
-
   handleClose = () => this.setState({open: false});
 
   render() {
@@ -22,7 +20,6 @@ export default class LeftMenu extends React.Component {
           {...this.props}
           onTouchTap={this.handleToggle}
         />
-
         <Drawer
           docked={false}
           width={200}
