@@ -14,7 +14,7 @@ class Routes extends Component {
           <Route path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route onEnter={requireAuth} >
-            <Route path="profile/edit" component={EditProfile} />
+            <Route path="/profile/edit" component={EditProfile} />
           </Route>
         </Route>
       </Router>

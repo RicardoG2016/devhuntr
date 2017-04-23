@@ -5,12 +5,8 @@ import Jobs from '../jobs/Jobs';
 import Landing from './Landing';
 
 class Home extends Component {
-  static propTypes = {
-    ...connectProfile.PropTypes
-  };
 
   render() {
-
     const homeIntro = {
       fontSize: "large"
     };

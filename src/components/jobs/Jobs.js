@@ -1,17 +1,13 @@
 import React, {Component} from 'react';
-import ListJobs from './ListJobs'
-import AddJobs from './AddJobs'
 
-
-class App extends Component {
+class Jobs extends Component {
   render() {
     return (
       <div>
-        <AddJobs />
-        <ListJobs />
+        "You're logged in"
       </div>
     );
   }
 }
 
-export default App;
+export default Jobs;
