@@ -17,7 +17,8 @@ class EditProfile extends Component {
     const {profile} = this.props;
     const {saving, saved} = this.state;
     const user_metadata = profile.user_metadata || {};
-
+    console.log(this.props.profile)
+    
     return (
       <div className="EditProfile">
         <div className="EditProfile-heading">Your Profile</div>

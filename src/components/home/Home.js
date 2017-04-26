@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connectProfile} from '../../auth0/auth';
 import {Link} from 'react-router';
-import Jobs from '../jobs/Jobs';
 import Landing from './Landing';
 
 class Home extends Component {
@@ -14,7 +13,7 @@ class Home extends Component {
     return (
         <div className="Home">
           <div style={homeIntro}>
-              {(this.props.profile) ? <Jobs /> : <Landing />}
+              {(this.props.profile) ? "Logged in :)" : <Landing />}
           </div>
         </div>
     );
