@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connectProfile} from '../../auth0/auth';
 import './EditProfile.css';
+import Add from '../jobs/Add';
+import JobTracker from '../jobs/Layout';
 
 class EditProfile extends Component {
   static propTypes = {
@@ -17,7 +19,6 @@ class EditProfile extends Component {
     const {profile} = this.props;
     const {saving, saved} = this.state;
     const user_metadata = profile.user_metadata || {};
-    console.log(this.props.profile)
     
     return (
       <div className="EditProfile">
@@ -52,6 +53,7 @@ class EditProfile extends Component {
             </div>
           </fieldset>
         </form>
+        <JobTracker profile={this.props.profile}/>
       </div>
     );
   }
