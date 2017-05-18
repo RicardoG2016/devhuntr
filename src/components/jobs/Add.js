@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
+import '../../index.css';
+import TextField from 'material-ui/TextField';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+import FlatButton from 'material-ui/FlatButton';
 
 class Add extends React.Component {
   constructor(){
     super();
     this.state = {
       newJob:{}, 
-      valTitle: 'Front End Developer...',
-      valCompany: 'Google...'
+      title: 'Title...',
+      company: 'Company...',
+      status: null,
+      source: null,
+      response: null,
+      value: null,
     };
 
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -20,24 +30,37 @@ class Add extends React.Component {
     sources: ['Indeed', 'Linkedin', 'Jobs.com', 'CareerBuilder', 'Facebook', 'Referral', 'Networking Event', 'Other']
   }
 
+    handleChange(event){
+      const target = event.target;
+      const val = target.value;
+      const name = target.name;
+      this.setState({
+        [name]: val,
+      });
+    }
+
+  handleStatus = (event, index, value, status) => this.setState({status: value});
+  handleSource = (event, index, value, status) => this.setState({source: value});
+  handleResponse = (event, index, value, status) => this.setState({response: value});
+
   handleSubmit(e){
-    console.log(this.props)
-    if(this.refs.title.value === ''){
-      alert('Title is required');
-    } else {
+    if(this.refs.title.input.value === ''){
+      alert('Ensure all fields are complete')
+    }
+    else {
+      console.log(this.state)
       this.setState({newJob:{
         id: uuid.v4(),
         user: this.props.user.user_id,
-        title: this.refs.title.value,
-        company: this.refs.company.value,
-        status: this.refs.status.value,
-        source: this.refs.source.value,
-        response: this.refs.response.value
+        title: this.refs.title.input.value,
+        company: this.refs.company.input.value,
+        status: this.refs.status.props.value,
+        source: this.refs.source.props.value,
+        response: this.refs.response.props.value
       }}, function(){
         this.props.addJob(this.state.newJob);
       });
     }
-
     e.preventDefault();
   }
 
@@ -60,38 +83,66 @@ class Add extends React.Component {
       <div>
         <h3> Add Job </h3>
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <label>Title</label><br />
-            <input type="text" ref="title" placeholder={this.state.valTitle} value={this.state.value} />
-          </div>
-          <br />
-          <div>
-            <label>Company</label><br />
-            <input type="text" ref="company" placeholder={this.state.valCompany} value={this.state.value} />
-          </div>
-          <br />
-          <div>
-            <label>Status</label><br />
-              <select ref="status">
-                {statusOptions}
-              </select>           
-          </div>
-          <br />
-          <div>
-            <label>Source</label><br />
-              <select ref="source">
-                {sourceOptions}
-              </select>           
-          </div>
-          <br />
-          <div>
-            <label>Response</label><br />
-              <select ref="response">
-                {responseOptions}
-              </select>           
-          </div>
-          <br />
-          <input values="Submit" type="submit" />
+            <TextField 
+              type="text" 
+              name="title" 
+              ref="title"
+              hintText={this.state.title}
+              onChange={this.handleChange}
+             />
+             <br />
+            <TextField 
+              type='text'
+              name='company' 
+              ref='company'
+              hintText={this.state.company}
+              onChange={this.handleChange}
+             />
+             <br />
+            <SelectField
+              hintText="Source..."
+              onChange={this.handleSource}
+              value={this.state.source}
+              name="source"
+              ref="source"
+            >
+              <MenuItem value="Indeed" primaryText="Indeed" />
+              <MenuItem value="Linkedin" primaryText="Linkedin" />
+              <MenuItem value="Jobs.com" primaryText="Jobs.com" />
+              <MenuItem value="CareerBuilder" primaryText="CareerBuilder" />
+              <MenuItem value="Facebook" primaryText="Facebook" />
+              <MenuItem value="Referral" primaryText="Referral" />
+              <MenuItem value="Networking Event" primaryText="Networking Event" />
+              <MenuItem value="Other" primaryText="Other" />
+            </SelectField>
+            <br />
+            <SelectField
+              hintText="Status..."
+              onChange={this.handleStatus}
+              value={this.state.status}
+              name="status"
+              ref="status"
+            >
+              <MenuItem value="Active" primaryText="Active" />
+              <MenuItem value="Archive" primaryText="Archive" />
+            </SelectField>
+            <br />
+            <SelectField
+              hintText="Response..."
+              onChange={this.handleResponse}
+              value={this.state.response}
+              name="response"
+              ref="response"
+            >
+              <MenuItem value="Awaiting Response" primaryText="Awaiting Response" />
+              <MenuItem value="Not Selected" primaryText="Not Selected" />
+              <MenuItem value="Phone Interview" primaryText="Phone Interview" />
+              <MenuItem value="Technical Interview" primaryText="Technical Interview" />
+              <MenuItem value="On site" primaryText="On site" />
+              <MenuItem value="Offer" primaryText="Offer" />
+            </SelectField>
+            <br />
+          <FlatButton values="Submit" type="submit" label="Submit"/>
         </form>
       </div>
     );

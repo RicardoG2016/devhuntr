@@ -49,7 +49,6 @@ class Job extends React.Component {
   }
 
   render() {
-    console.log(this.props)
 
     let statusOptions = this.props.statuses.map(status => {
       return <option key={status} value={status}>{status}</option>

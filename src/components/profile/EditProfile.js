@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {connectProfile} from '../../auth0/auth';
 import './EditProfile.css';
-import Add from '../jobs/Add';
-import JobTracker from '../jobs/Layout';
+import '../../index.css';
 
 class EditProfile extends Component {
   static propTypes = {
@@ -19,9 +18,13 @@ class EditProfile extends Component {
     const {profile} = this.props;
     const {saving, saved} = this.state;
     const user_metadata = profile.user_metadata || {};
-    
+    const home = {
+      body: 'grey200',
+      height: '100vh',
+    };
+
     return (
-      <div className="EditProfile">
+      <div className="EditProfile" style={home}>
         <div className="EditProfile-heading">Your Profile</div>
         <div className="EditProfile-profile">
           <p><strong>Nickname:</strong> {profile.nickname}</p>
@@ -53,7 +56,6 @@ class EditProfile extends Component {
             </div>
           </fieldset>
         </form>
-        <JobTracker profile={this.props.profile}/>
       </div>
     );
   }

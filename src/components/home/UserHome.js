@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connectProfile} from '../../auth0/auth';
 import {Link} from 'react-router';
 import {grey200} from 'material-ui/styles/colors';
+import JobTracker from '../jobs/Layout';
 
 class Home extends Component {
   static propTypes = {
@@ -11,14 +12,14 @@ class Home extends Component {
   render() {
 
     const homeIntro = {
-      fontSize: "large",
+      fontSize: 'large',
       margin: '0px auto',
     };
 
     return (
         <div>
           <div style={homeIntro}>
-            Landing Page Coming Soon
+            <JobTracker profile={this.props.profile}/>
           </div>
         </div>
     );

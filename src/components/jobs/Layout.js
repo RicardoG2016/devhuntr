@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Add from './Add';
 import List from './List';
+import Stats from './Stats';
 import uuid from 'uuid';
+import '../../index.css';
+import Divider from 'material-ui/Divider';
+import SelectFieldExamlpe from './Select';
+import Select from 'material-ui/SelectField';
 
 class JobTracker extends React.Component {
 
@@ -72,16 +77,20 @@ class JobTracker extends React.Component {
   }
 
   render() {
+
     return (
       <div className="App">
+        <Stats />
         <Add addJob={this.handleAddJob.bind(this)} user={this.props.profile} />
         <br />
-        <hr />
+        <br />
+        <br />
+        <br />
+        <Divider />
+        <br />
+        <br />
+        <br />
         <List jobs={this.state.jobs} onDelete={this.handleDeleteJob.bind(this)} user={this.props.profile} />
-          <br />
-          <br />
-          <br />
-          <br />
       </div>
     );
   }

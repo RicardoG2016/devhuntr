@@ -8,6 +8,11 @@ import EditProfile from './components/profile/EditProfile';
 
 class Routes extends Component {
   render() {
+
+    const b = {
+      backgroundColor: "grey"
+    }
+
     return (
       <Router history={browserHistory}>
         <Route component={Nav}>
