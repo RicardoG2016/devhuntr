@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-# devhuntr
+# Job Tracker
 Sample Job Tracking tool allows users to keep track of the jobs they've applied for and identify the status of the job. Users can login using auth0 to ensure it's secure. Design is accomplished with google material ui.
 
 See screen shots below
