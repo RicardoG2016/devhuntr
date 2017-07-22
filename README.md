@@ -18,6 +18,6 @@ See screen shots below
 ![alt text](https://user-images.githubusercontent.com/20272116/28486997-60c7bd56-6e4e-11e7-85dd-59962d340f4a.png)
 
 ## The nav menu allows you to navigate throughout the app.
-![alt text](https://user-images.githubusercontent.com/20272116/28487005-9421a5e0-6e4e-11e7-9e29-efa5b2fee2ef.png)
+![alt text](https://user-images.githubusercontent.com/20272116/28487623-38883300-6e5a-11e7-9607-451b36b6816b.png)
 
 ## Currently the data is not persisted but i'm hoping to link it up to a firebase database to resolve this issue.
