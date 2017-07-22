@@ -67,6 +67,10 @@ class Add extends React.Component {
 // options for status, response and source
   render() {
 
+    const selectstyle = {
+      textAlign: 'left'
+    }
+
     let statusOptions = this.props.statuses.map(status => {
       return <option key={status} value={status}>{status}</option>
     });
@@ -99,6 +103,7 @@ class Add extends React.Component {
              />
              <br />
             <SelectField
+              style={selectstyle}
               hintText="Source..."
               onChange={this.handleSource}
               value={this.state.source}
@@ -116,6 +121,7 @@ class Add extends React.Component {
             </SelectField>
             <br />
             <SelectField
+              style={selectstyle}
               hintText="Status..."
               onChange={this.handleStatus}
               value={this.state.status}
@@ -127,6 +133,7 @@ class Add extends React.Component {
             </SelectField>
             <br />
             <SelectField
+              style={selectstyle}
               hintText="Response..."
               onChange={this.handleResponse}
               value={this.state.response}
