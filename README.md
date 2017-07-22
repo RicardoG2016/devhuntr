@@ -6,7 +6,7 @@ Sample Job Tracking tool allows users to keep track of the jobs they've applied 
 See screen shots below
 
 ## Users must login to use app, landing page is shown by default.
-![alt text](https://user-images.githubusercontent.com/20272116/28486990-598779d2-6e4e-11e7-98ff-57480ea871c2.png)
+![alt text](https://user-images.githubusercontent.com/20272116/28487584-319cf9fa-6e59-11e7-8711-f75784bcb0ad.png)
 
 ## Auth0 api provides authentication services.
 ![alt text](https://user-images.githubusercontent.com/20272116/28486993-5c252464-6e4e-11e7-8744-11e4c7715165.png)
