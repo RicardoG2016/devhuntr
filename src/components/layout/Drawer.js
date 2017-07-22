@@ -3,6 +3,9 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import AppBar from 'material-ui/AppBar';
+import {Link} from 'react-router';
+import {logout} from '../../auth0/auth';
+import './Nav.css'
 
 export default class LeftMenu extends React.Component {
   constructor(props) {
@@ -25,9 +28,10 @@ export default class LeftMenu extends React.Component {
           width={200}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
-        >
-          <MenuItem onTouchTap={this.handleClose}>About</MenuItem>
-          <MenuItem onTouchTap={this.handleClose}>Profile</MenuItem>
+        > 
+          <MenuItem onTouchTap={this.handleClose}><Link className="link" to="/" >Home</Link></MenuItem>       
+          <MenuItem onTouchTap={this.handleClose}><Link className="link" to="/profile/edit" >Profile</Link></MenuItem>
+          <MenuItem onTouchTap={this.handleClose}><Link className="link" to="/" ><a className="link" onClick={() => logout()}>Logout</a></Link></MenuItem> 
         </Drawer>
       </div>
     );

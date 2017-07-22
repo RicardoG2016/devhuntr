@@ -81,7 +81,6 @@ class Add extends React.Component {
 
     return (
       <div>
-        <h3> Add Job </h3>
         <form onSubmit={this.handleSubmit}>
             <TextField 
               type="text" 

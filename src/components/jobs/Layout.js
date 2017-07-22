@@ -4,9 +4,6 @@ import List from './List';
 import Stats from './Stats';
 import uuid from 'uuid';
 import '../../index.css';
-import Divider from 'material-ui/Divider';
-import SelectFieldExamlpe from './Select';
-import Select from 'material-ui/SelectField';
 
 class JobTracker extends React.Component {
 
@@ -15,6 +12,7 @@ class JobTracker extends React.Component {
     this.state = {
       jobs: [],
     }
+    this.handleAddJob = this.handleAddJob.bind(this)
   }
 
   getJobs(){
@@ -22,7 +20,7 @@ class JobTracker extends React.Component {
      {
       id:uuid.v4(),
       title: "front end developer",
-      user: 'none',
+      user: this.props.profile.user_id,
       company: "Apple",
       status: "Active",
       source: "Indeed",
@@ -40,7 +38,7 @@ class JobTracker extends React.Component {
     ]})
   };
 
-  componentDidMount(){
+  componentWillMount(){
    this.getJobs(); 
   }
 
@@ -78,19 +76,27 @@ class JobTracker extends React.Component {
 
   render() {
 
+const style = {
+
+}
+
     return (
       <div className="App">
-        <Stats />
-        <Add addJob={this.handleAddJob.bind(this)} user={this.props.profile} />
+        <h1 style={{color: '#757575'}}>Job Application Overview</h1>
+        <br />
+        <Stats jobs={this.state.jobs} />
         <br />
         <br />
+        <Add addJob={this.handleAddJob} user={this.props.profile} />
         <br />
         <br />
-        <Divider />
         <br />
         <br />
         <br />
         <List jobs={this.state.jobs} onDelete={this.handleDeleteJob.bind(this)} user={this.props.profile} />
+        <br />
+        <br />
+        <br />
       </div>
     );
   }

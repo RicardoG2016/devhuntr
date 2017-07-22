@@ -1,7 +1,5 @@
-
 .Site {
   text-align: center;
-  height: 100vh;
 }
 
 .Site-profileControls {
@@ -17,4 +15,12 @@
 
 .Site-page {
   padding: 20px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.nav-title {
+  color: white;
 }

@@ -11,14 +11,15 @@ class Home extends Component {
   render() {
 
     const homeIntro = {
+      height: '100vh',
       fontSize: "large",
-      margin: '0px auto',
+      margin: '300px auto',
     };
 
     return (
         <div>
           <div style={homeIntro}>
-            Landing Page Coming Soon
+            Please login to use app :)
           </div>
         </div>
     );

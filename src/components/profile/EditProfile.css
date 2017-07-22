@@ -1,11 +1,7 @@
-html {
-  height: 100vh;
-  
-}
-
 .EditProfile {
   max-width: 480px;
   margin: 0px auto;
+  text-align: center;
 }
 
 .EditProfile-fieldset {
@@ -51,4 +47,8 @@ html {
   color: rgba(0, 0, 0, 0.5);
   font-size: 28px;
   margin: 30px 0px 20px 0px;
+}
+
+.Site-profilePicture {
+border-radius: 5px;
 }

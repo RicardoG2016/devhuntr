@@ -1,11 +1,16 @@
-.home {
-  height: 100vh;
+html {
+  height: 100%;
+  width: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.center {
+  margin: 0 auto;
 }
 
 a {

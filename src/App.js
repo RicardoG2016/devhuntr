@@ -13,7 +13,6 @@ const muiTheme = getMuiTheme({
   },
 });
 
-
 class App extends Component {
   render() {
     return (

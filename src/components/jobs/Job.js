@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import {
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
 
 class Job extends React.Component {
   constructor(props){
@@ -11,7 +15,7 @@ class Job extends React.Component {
       company: this.props.job.company,
       source: this.props.job.source,
       status: this.props.job.status,
-      response: this.props.job.response
+      response: this.props.job.response,
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -83,15 +87,14 @@ class Job extends React.Component {
     const view = this.state.editing ? edit : normal;
 
     return (
-    
-      <tr>
-        <td>{view.title}</td>
-        <td>{view.company}</td>
-        <td>{view.source}</td>
-        <td>{view.status}</td>
-        <td>{view.response}</td>
-        <td>{view.btn}</td>
-      </tr>
+    <TableRow>
+      <TableRowColumn>{view.title}</TableRowColumn>
+      <TableRowColumn>{view.company}</TableRowColumn>
+      <TableRowColumn>{view.source}</TableRowColumn>
+      <TableRowColumn>{view.status}</TableRowColumn>
+      <TableRowColumn>{view.response}</TableRowColumn>
+      <TableRowColumn>{view.btn}</TableRowColumn>
+    </TableRow>
     );
   }
 }

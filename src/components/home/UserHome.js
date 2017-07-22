@@ -19,7 +19,7 @@ class Home extends Component {
     return (
         <div>
           <div style={homeIntro}>
-            <JobTracker profile={this.props.profile}/>
+            <JobTracker className="center" profile={this.props.profile}/>
           </div>
         </div>
     );

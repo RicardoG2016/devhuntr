@@ -4,13 +4,13 @@ import {Link} from 'react-router';
 import Landing from './Landing';
 import UserHome from './UserHome';
 import {grey200} from 'material-ui/styles/colors';
+import '../../index.css';
 
 class Home extends Component {
 
   render() {
     const home = {
       body: 'grey200',
-      height: '100vh',
     };
 
     const homeIntro = {
@@ -21,7 +21,7 @@ class Home extends Component {
     return (
         <div style={home}>
           <div style={homeIntro}>
-              {(this.props.profile) ? <UserHome profile={this.props.profile}/> : <Landing />}
+              {(this.props.profile) ? <UserHome className="center" profile={this.props.profile} /> : <Landing />}
           </div>
         </div>
     );

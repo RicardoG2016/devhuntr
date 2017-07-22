@@ -9,25 +9,26 @@ import LeftMenu from '../layout/Drawer';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import {blue500} from 'material-ui/styles/colors';
 import {grey200} from 'material-ui/styles/colors';
-
+import DatePicker from 'material-ui/DatePicker';
+import Avatar from 'material-ui/Avatar';
 
 class Login extends Component {
   static muiName = 'FlatButton';
-
   render() {
     return (
-        <Link to="/profile/edit" ><a onClick={() => login()}><FlatButton {...this.props} label="Login" /></a></Link>
+        <Link to="/" ><a onClick={() => login()}><FlatButton {...this.props} label="Login" /></a></Link>
     );
   }
 }
 
 class Logged extends Component {
   static muiName = 'FlatButton';
-
   render() {
+    const profile = this.props.profile
+    console.log(this.props)
     return (
       <div>
-        <Link to="/"><a onClick={() => logout()}><FlatButton {...this.props} label="Add Job" /></a></Link>
+        <FlatButton icon={<Avatar style={{width:'35px', height:'35px'}} src={profile.picture} />} />
         <Link to="/"><a onClick={() => logout()}><FlatButton {...this.props} label="Log Out" /></a></Link>
       </div>
     );
@@ -66,9 +67,9 @@ class Nav extends Component {
     <div style={divStyle}>
         <AppBar
           style={navStyle}
-          title="Peribit Jobs"
+          title={<Link className="link nav-title" to="/" >Job Tracker</Link>}
           iconElementLeft={<IconButton><LeftMenu /></IconButton>}
-          iconElementRight={this.props.profile ? <Logged /> : <Login />}
+          iconElementRight={this.props.profile ? <Logged profile={this.props.profile}/> : <Login />}
         />
         <div className="Site-page">{this.props.children}</div>
     </div>
@@ -77,9 +78,3 @@ class Nav extends Component {
 }
 
 export default connectProfile(Nav);
-
-// Add below for pic and info on user
-        // <div className="Site" style={divStyle}>
-        //   <div className="Site-header">{this.renderUserControls()}</div>
-        //   <div className="Site-page">{this.props.children}</div>
-        // </div>
